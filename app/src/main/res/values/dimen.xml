@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mini_margin">2dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="big_margin">32dp</dimen>
+
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="parallax_image_height">250dp</dimen>
+    <dimen name="map_height">400dp</dimen>
+
+    <dimen name="small_font">10dp</dimen>
+    <dimen name="normal_font">12dp</dimen>
+    <dimen name="medium_font">14dp</dimen>
+    <dimen name="big_font">18dp</dimen>
+</resources>
