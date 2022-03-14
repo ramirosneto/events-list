@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Products List"
+rootProject.name = "Events List"
 include ':app'

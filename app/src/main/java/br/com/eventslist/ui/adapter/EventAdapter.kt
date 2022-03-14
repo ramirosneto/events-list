@@ -1,4 +1,4 @@
-package br.com.eventslist.adapter
+package br.com.eventslist.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.eventslist.R
 import br.com.eventslist.databinding.EventItemBinding
-import br.com.eventslist.model.EventItemVO
+import br.com.eventslist.data.model.EventItemVO
+import br.com.eventslist.utils.CurrencyUtils
 import br.com.eventslist.utils.DateUtils
 import com.squareup.picasso.Picasso
 
@@ -25,6 +26,13 @@ class EventAdapter(
                 binding.date.visibility = View.VISIBLE
             } ?: run {
                 binding.date.visibility = View.GONE
+            }
+
+            event.price?.let {
+                binding.price.text = CurrencyUtils.formatPrice(it)
+                binding.price.visibility = View.VISIBLE
+            } ?: run {
+                binding.price.visibility = View.GONE
             }
 
             event.title?.let {

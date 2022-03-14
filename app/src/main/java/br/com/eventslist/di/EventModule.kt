@@ -1,9 +1,9 @@
 package br.com.eventslist.di
 
 import br.com.eventslist.BuildConfig
-import br.com.eventslist.network.EventRepository
-import br.com.eventslist.network.EventService
-import br.com.eventslist.view.EventViewModel
+import br.com.eventslist.data.api.EventRepository
+import br.com.eventslist.data.api.EventService
+import br.com.eventslist.ui.viewmodel.EventViewModel
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

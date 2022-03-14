@@ -2,4 +2,13 @@
     <string name="app_name">Events List</string>
 
     <string name="txt_location">Localização</string>
+    <string name="txt_name">Nome</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_check_in">Check-in</string>
+    <string name="txt_check_in_successfull">Check-in relizado</string>
+    <string name="txt_check_in_error">Ocorreu um erro ao realizar o check-in. Tente novamente mais tarde.</string>
+    <string name="txt_do_check_in">Fazer check-in</string>
+    <string name="msg_validate_name">Preencha o nome corretamente.</string>
+    <string name="msg_validate_email">Preencha o email corretamente.</string>
+    <string name="requisition_error">Ocorreu um erro ao realizar a operação. Tente novamente mais tarde.</string>
 </resources>

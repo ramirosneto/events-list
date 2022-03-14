@@ -1,6 +1,6 @@
-package br.com.eventslist.adapter
+package br.com.eventslist.ui.adapter
 
-import br.com.eventslist.model.EventItemVO
+import br.com.eventslist.data.model.EventItemVO
 
 interface EventClickListener {
 

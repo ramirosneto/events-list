@@ -1,4 +1,4 @@
-package br.com.eventslist.model
+package br.com.eventslist.data.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -20,5 +20,6 @@ data class EventItemVO(
     @SerializedName("price")
     val price: Double?,
     @SerializedName("title")
-    val title: String?
+    val title: String?,
+    var checkedIn: Boolean = false
 )
