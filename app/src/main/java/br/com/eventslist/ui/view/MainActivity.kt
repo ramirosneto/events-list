@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), EventClickListener {
     }
 
     private fun displayError(errorMessage: String) {
-        Toast.makeText(this@MainActivity, R.string.requisition_error, Toast.LENGTH_LONG).show()
+        Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_LONG).show()
         hideLoading()
     }
 }

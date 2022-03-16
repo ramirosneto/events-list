@@ -3,8 +3,9 @@ package br.com.eventslist.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.eventslist.data.model.EventCheckInRequest
 import br.com.eventslist.data.api.EventRepository
+import br.com.eventslist.data.model.EventCheckInRequest
+import br.com.eventslist.extensions.handleThrowable
 import br.com.eventslist.utils.NetworkStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,7 +23,8 @@ class EventViewModel(private val repository: EventRepository) : ViewModel() {
                     val result = repository.getEvents()
                     progressLiveStatus.postValue(NetworkStatus.Success(result))
                 } catch (throwable: Throwable) {
-                    progressLiveStatus.postValue(NetworkStatus.Error(throwable.message.toString()))
+                    val handledError = throwable.handleThrowable()
+                    progressLiveStatus.postValue(handledError)
                 }
             }
         }
@@ -36,7 +38,8 @@ class EventViewModel(private val repository: EventRepository) : ViewModel() {
                     val result = repository.getEventDetail(id)
                     progressLiveStatus.postValue(NetworkStatus.Success(result))
                 } catch (throwable: Throwable) {
-                    progressLiveStatus.postValue(NetworkStatus.Error(throwable.message.toString()))
+                    val handledError = throwable.handleThrowable()
+                    progressLiveStatus.postValue(handledError)
                 }
             }
         }
@@ -50,7 +53,8 @@ class EventViewModel(private val repository: EventRepository) : ViewModel() {
                     val result = repository.checkIn(request)
                     progressLiveStatus.postValue(NetworkStatus.Success(result))
                 } catch (throwable: Throwable) {
-                    progressLiveStatus.postValue(NetworkStatus.Error(throwable.message.toString()))
+                    val handledError = throwable.handleThrowable()
+                    progressLiveStatus.postValue(handledError)
                 }
             }
         }

@@ -166,7 +166,7 @@ class EventDetailActivity : AppCompatActivity() {
             when (it) {
                 is NetworkStatus.Loading -> showLoading()
                 is NetworkStatus.Success<*> -> checkInSuccess()
-                is NetworkStatus.Error -> checkInError()
+                is NetworkStatus.Error -> checkInError(it.errorMessage)
             }
         }
     }
@@ -178,8 +178,8 @@ class EventDetailActivity : AppCompatActivity() {
         binding.btnCheckIn.text = getString(R.string.txt_check_in_successfull)
     }
 
-    private fun checkInError() {
-        Toast.makeText(this@EventDetailActivity, R.string.txt_check_in_error, Toast.LENGTH_LONG).show()
+    private fun checkInError(errorMessage: String) {
+        Toast.makeText(this@EventDetailActivity, errorMessage, Toast.LENGTH_LONG).show()
     }
 
     private fun shareContent(event: EventItemVO) {
@@ -197,7 +197,7 @@ class EventDetailActivity : AppCompatActivity() {
     }
 
     private fun displayError(errorMessage: String) {
-        Toast.makeText(this@EventDetailActivity, R.string.requisition_error, Toast.LENGTH_LONG).show()
+        Toast.makeText(this@EventDetailActivity, errorMessage, Toast.LENGTH_LONG).show()
         hideLoading()
         finish()
     }
